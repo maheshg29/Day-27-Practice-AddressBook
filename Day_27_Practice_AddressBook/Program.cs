@@ -17,7 +17,8 @@ namespace Day_27_Practice_AddressBook
                 Console.WriteLine("1.Add Contact");
                 Console.WriteLine("2.Show Contacts");
                 Console.WriteLine("3.Edit Contact");
-                
+                Console.WriteLine("4.Delete Contact");
+                Console.WriteLine("5.Exit");
                 Console.WriteLine("-----------------------");
                 int choice = Convert.ToInt32(Console.ReadLine());
 
@@ -53,6 +54,13 @@ namespace Day_27_Practice_AddressBook
                         string fName = Console.ReadLine();
                         contactOperation.editContact(fName);
                         break;
+                     
+                    case 4:
+                        Console.WriteLine("Enter serial number  of the Contact You Want to Delete.:");
+                        int srnumber = Convert.ToInt32(Console.ReadLine());
+                        contactOperation.deleteContact(srnumber);
+                        break;
+
 
                 }
             }

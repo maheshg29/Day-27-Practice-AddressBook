@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,8 +19,19 @@ namespace Day_27_Practice_AddressBook
         {
             Contact newContact = new Contact(firstName, lastName, address, city, state, zip, phoneNumber, email);
             this.ContactList.Add(newContact);
+           
         }
 
+        public void deleteContact(int  srnumber)
+        {
+
+            this.ContactList.RemoveAt(srnumber);
+         }
+        
+
+
+
+          
         public void editContact(string fName)
         {
             foreach (var contact in ContactList)
