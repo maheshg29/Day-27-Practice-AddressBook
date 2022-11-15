@@ -5,31 +5,57 @@ namespace Day_27_Practice_AddressBook
     {
         public static void Main(string[] args)
         {
+
             Console.WriteLine("Welcome To Address Book");
             Console.WriteLine("-----------------------");
-            Console.WriteLine("-----------------------");
-            Console.WriteLine("--Add Contact Details--");
-
-            Console.WriteLine("First Name:");
-            string firstName = Console.ReadLine();
-            Console.WriteLine("Last Name:");
-            string lastName = Console.ReadLine();
-            Console.WriteLine("Address:");
-            string address = Console.ReadLine();
-            Console.WriteLine("City:");
-            string city = Console.ReadLine();
-            Console.WriteLine("State:");
-            string state = Console.ReadLine();
-            Console.WriteLine("Zip Code:");
-            string zip = Console.ReadLine();
-            Console.WriteLine("Phone Number:");
-            string phoneNumber = Console.ReadLine();
-            Console.WriteLine("Email Address:");
-            string email = Console.ReadLine();
 
             ContactOperation contactOperation = new ContactOperation();
-            contactOperation.addContact(firstName,lastName,address,city,state,zip,phoneNumber,email);
-            contactOperation.showList();
+            while (true)
+            {
+                Console.WriteLine("-----------------------");
+                Console.WriteLine("Select Choice:");
+                Console.WriteLine("1.Add Contact");
+                Console.WriteLine("2.Show Contacts");
+               
+                Console.WriteLine("-----------------------");
+                int choice = Convert.ToInt32(Console.ReadLine());
+
+                switch (choice)
+                {
+                    case 1:
+                        Console.WriteLine("--Add Contact Details--");
+                        Console.WriteLine("First Name:");
+                        string firstName = Console.ReadLine();
+                        Console.WriteLine("Last Name:");
+                        string lastName = Console.ReadLine();
+                        Console.WriteLine("Address:");
+                        string address = Console.ReadLine();
+                        Console.WriteLine("City:");
+                        string city = Console.ReadLine();
+                        Console.WriteLine("State:");
+                        string state = Console.ReadLine();
+                        Console.WriteLine("Zip Code:");
+                        string zip = Console.ReadLine();
+                        Console.WriteLine("Phone Number:");
+                        string phoneNumber = Console.ReadLine();
+                        Console.WriteLine("Email Address:");
+                        string email = Console.ReadLine();
+                        contactOperation.addContact(firstName, lastName, address, city, state, zip, phoneNumber, email);
+                        break;
+
+                    case 2:
+                        contactOperation.showList();
+                        break;
+
+                    case 3:
+                        Console.WriteLine("Enter First Name of the Contact You Want to Edit.:");
+                        string fName = Console.ReadLine();
+                        contactOperation.editContact(fName);
+                        break;
+
+                }
+            }
+            
         }
     }
 }
