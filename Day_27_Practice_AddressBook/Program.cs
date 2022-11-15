@@ -16,7 +16,8 @@ namespace Day_27_Practice_AddressBook
                 Console.WriteLine("Select Choice:");
                 Console.WriteLine("1.Add Contact");
                 Console.WriteLine("2.Show Contacts");
-               
+                Console.WriteLine("3.Edit Contact");
+                
                 Console.WriteLine("-----------------------");
                 int choice = Convert.ToInt32(Console.ReadLine());
 
